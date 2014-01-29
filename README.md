@@ -14,7 +14,7 @@ It adds a new question type to your e-learning website that allows users to ente
 
 ## Caveats
 
-Unlike most other question types, essay questions cannot be marked automatically and as such Tests which contain an essay question need to be manually published.
+Unlike most other question types, essay questions cannot be marked automatically and as such Test Results which contain an essay answer need to be manually published.
 
 
 ### Why?
