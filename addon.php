@@ -1,9 +1,7 @@
 <?php
 /*
 Plugin Name: Train-up! Essay questions
-Plugin URI: http://wptrainup.co.uk/
 Description: Trainees are required to enter some text
-Author: @amk221
 Version: 0.0.2
 License: GPL2
 */
@@ -15,9 +13,9 @@ class Essay_questions_addon {
   /**
    * __construct
    *
-   * Listen to the filters that the Train-Up! plugin provides, and latch on, 
+   * Listen to the filters that the Train-Up! plugin provides, and latch on,
    * inserting the new functionality where needed.
-   * 
+   *
    * @access public
    */
   public function __construct() {
@@ -35,9 +33,9 @@ class Essay_questions_addon {
   /**
    * _add_type
    *
-   * - Callback for when retrieving the hash of question types. 
+   * - Callback for when retrieving the hash of question types.
    * - Insert our new 'essay' question type.
-   * 
+   *
    * @param mixed $types
    *
    * @access public
@@ -55,7 +53,7 @@ class Essay_questions_addon {
    *
    * - Callback for when the meta boxes are defined for Question admin screens
    * - Define one for our custom Question type: essay
-   * 
+   *
    * @param mixed $meta_boxes
    *
    * @access public
@@ -78,7 +76,7 @@ class Essay_questions_addon {
    * - Callback function for an action that is fired when the 'essay' meta
    *   box is to be rendered.
    * - Echo out the view that lets the administrator configure this Question
-   * 
+   *
    * @access public
    */
   public function _meta_box() {
@@ -103,9 +101,9 @@ class Essay_questions_addon {
    * - Fired when an essay question is saved
    * - Note: Essay style questions have no correct answer, therefore at this
    *   point we don't need to set the tu_answers post meta unlike most others.
-   * - Save whether or not the WYSIWYG editor should be initialised on the 
+   * - Save whether or not the WYSIWYG editor should be initialised on the
    *   front end when viewing the Question.
-   * 
+   *
    * @param mixed $question
    *
    * @access public
@@ -121,7 +119,7 @@ class Essay_questions_addon {
    *
    * - Fired when the Essay-style question is shown
    * - Return a textarea to allow Trainees to enter their essay/whatever
-   * 
+   *
    * @param mixed $content
    *
    * @access public
@@ -143,7 +141,7 @@ class Essay_questions_addon {
    * - Return null because this question type cannot be considered true or
    *   false. It has to be judged by a moderator and the percentage score
    *   manually set.
-   * 
+   *
    * @param mixed $correct Whether or not the answer is correct
    * @param mixed $users_answer The user's attempted answer
    * @param mixed $question The question this answer is for
@@ -159,6 +157,6 @@ class Essay_questions_addon {
 }
 
 
-add_action('plugins_loaded', function() { 
+add_action('plugins_loaded', function() {
   new Essay_questions_addon;
 });
